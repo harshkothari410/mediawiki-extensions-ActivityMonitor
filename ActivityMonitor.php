@@ -39,21 +39,31 @@ $wgSpecialPageGroups['ActivityMonitor'] = 'other';
 // Register modules
 $wgResourceModules['ext.ActivityMonitor.core'] = array(
 	'scripts' => array(
-		'modules/js/ext.ActivityMonitor.socketio.js', 'modules/js/ext.ActivityMonitor.core.js',
+		'modules/js/ext.ActivityMonitor.core.js',
 	),
 	'styles' => array(
-		'modules/js/ext.ActivityMonitor.foo.css',
+		'modules/css/ext.ActivityMonitor.foo.css',
 	),
 	'messages' => array(
 	),
 	'dependencies' => array(
+		'ext.ActivityMonitor.socketio',
 	),
 
 	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'examples/ActivityMonitor',
+	'remoteExtPath' => 'ActivityMonitor',
 );
 
 
+// Register Socket IO module
+$wgResourceModules['ext.ActivityMonitor.socketio'] = array(
+	'scripts' => array( 
+		'lib/socketio.js',
+	),
+
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'ActivityMonitor',
+);
 /* Configuration */
 
 // Enable Foo

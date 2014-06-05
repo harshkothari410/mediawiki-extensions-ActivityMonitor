@@ -23,6 +23,7 @@ class SpecialActivityMonitor extends SpecialPage {
 
 		$out->addWikiMsg( 'ActivityMonitor-helloworld-intro' );
 
-		$out->addModuleScripts( array( 'ext.ActivityMonitor.socketio', 'ext.ActivityMonitor.core' ) );
+		$out->addModules( array( 'ext.ActivityMonitor.core' ) );
+		// $out->addModuleScripts( array( 'ext.ActivityMonitor.socketio', 'ext.ActivityMonitor.core' ) );
 	}
 }

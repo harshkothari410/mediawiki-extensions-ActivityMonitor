@@ -3,6 +3,7 @@
  */
 
 ( function ( mw, $ ) {
+	alert('harsh');
 	var socket = io.connect('stream.wikimedia.org/rc');
 	printPlainObj({
 		'event': 'connect',
