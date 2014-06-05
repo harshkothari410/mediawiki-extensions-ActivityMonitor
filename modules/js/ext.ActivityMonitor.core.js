@@ -3,18 +3,18 @@
  */
 
 ( function ( mw, $ ) {
-	var socket = io.connect('stream.wmflabs.org/rc');
-printObj({
-  'event': 'connect',
-  'messsage': 'Connecting to stream.wmflabs.org...'
-});
+	var socket = io.connect('stream.wikimedia.org/rc');
+	printPlainObj({
+		'event': 'connect',
+		'messsage': 'Connecting to stream.wikimedia.org...'
+	});
 
-socket.on('connect', function () {
-  printObj({
+	socket.on('connect', function () {
+  printPlainObj({
     'event': 'connect',
     'messsage': 'Connection established!'
   });
-  printObj({
+  printPlainObj({
     'event': 'subscribe',
     'topic': '*',
     'messsage': 'Listening to all wikis...'
@@ -22,9 +22,16 @@ socket.on('connect', function () {
   socket.emit('subscribe', '*');
 });
 
+socket.on('error', function () {
+  printPlainObj({ 'event': 'error' });
+});
+
 socket.on('change', function (rc) {
+  if (rc.bot || rc.minor || rc.namespace !== 0) return;
   printChangeObj(rc);
 });
+
+}( mediaWiki, jQuery ) );
 
 function printChangeObj(rc) {
   var element = formatObj(rc);
@@ -34,12 +41,19 @@ function printChangeObj(rc) {
   linkRow.appendChild(linkHead);
   linkRow.appendChild(formatLinks(getLinks(rc)));
   element.appendChild(linkRow);
-  document.body.insertBefore(element, document.body.firstChild);
+
+  printElement(element);
 }
 
-function printObj(obj) {
+
+function printPlainObj(obj) {
   var element = formatObj(obj);
-  document.body.insertBefore(element, document.body.firstChild);
+
+  printElement(element);
+}
+
+function printElement(element) {
+  document.body.insertBefore(element, '#mw-content-text');
 }
 
 function formatObj(obj) {
@@ -95,5 +109,3 @@ function getLinks(rc) {
 
     return links;
 }
-
-}( mediaWiki, jQuery ) );

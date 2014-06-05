@@ -39,7 +39,7 @@ $wgSpecialPageGroups['ActivityMonitor'] = 'other';
 // Register modules
 $wgResourceModules['ext.ActivityMonitor.core'] = array(
 	'scripts' => array(
-		'modules/js/ext.ActivityMonitor.core.js',
+		'modules/js/ext.ActivityMonitor.socketio.js', 'modules/js/ext.ActivityMonitor.core.js',
 	),
 	'styles' => array(
 		'modules/js/ext.ActivityMonitor.foo.css',
