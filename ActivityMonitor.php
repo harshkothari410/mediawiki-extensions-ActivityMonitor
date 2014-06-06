@@ -15,6 +15,7 @@ $wgExtensionCredits['other'][] = array(
 	'name' => 'ActivityMonitor',
 	'author' => array(
 		'Harsh Kothari',
+		'Timo Tijhof',
 	),
 	'version'  => '0.1.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ActivityMonitor',
@@ -42,7 +43,7 @@ $wgResourceModules['ext.ActivityMonitor.core'] = array(
 		'modules/js/ext.ActivityMonitor.core.js',
 	),
 	'styles' => array(
-		'modules/css/ext.ActivityMonitor.foo.css',
+		// 'modules/css/ext.ActivityMonitor.foo.css',
 	),
 	'messages' => array(
 	),
