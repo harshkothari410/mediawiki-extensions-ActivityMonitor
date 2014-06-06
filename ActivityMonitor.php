@@ -6,7 +6,7 @@
  *
  * @file
  * @ingroup Extensions
- * @author Harsh Kothari ( harshkothari410@gmail.com ), 2014
+ * @author Harsh Kothari ( harshkothari410@gmail.com ), Timo Tijhof ( ttijhof@wikimedia.org ) 2014
  * @license GNU General Public Licence 2.0 or later
  */
 
@@ -30,9 +30,6 @@ $wgAutoloadClasses['SpecialActivityMonitor'] = __DIR__ . '/specials/SpecialActiv
 $wgMessagesDirs['ActivityMonitor'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ActivityMonitorAlias'] = __DIR__ . '/ActivityMonitor.i18n.alias.php';
 
-// Register hooks
-#$wgHooks['NameOfHook'][] = 'ActivityMonitorHooks::onNameOfHook';
-
 // Register special pages
 $wgSpecialPages['ActivityMonitor'] = 'SpecialActivityMonitor';
 $wgSpecialPageGroups['ActivityMonitor'] = 'other';
@@ -55,7 +52,6 @@ $wgResourceModules['ext.ActivityMonitor.core'] = array(
 	'remoteExtPath' => 'ActivityMonitor',
 );
 
-
 // Register Socket IO module
 $wgResourceModules['ext.ActivityMonitor.socketio'] = array(
 	'scripts' => array( 
@@ -65,7 +61,3 @@ $wgResourceModules['ext.ActivityMonitor.socketio'] = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'ActivityMonitor',
 );
-/* Configuration */
-
-// Enable Foo
-#$wgActivityMonitorEnableFoo = true;
