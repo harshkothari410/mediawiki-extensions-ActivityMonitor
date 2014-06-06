@@ -7,7 +7,7 @@
  * @file
  * @ingroup Extensions
  * @author Harsh Kothari ( harshkothari410@gmail.com ), Timo Tijhof ( ttijhof@wikimedia.org ) 2014
- * @license GNU General Public Licence 2.0 or later
+ * @license The MIT License (MIT)
  */
 
 $wgExtensionCredits['other'][] = array(

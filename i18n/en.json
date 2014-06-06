@@ -1,7 +1,11 @@
 {
     "@metadata": {
-        "authors": []
+        "authors": [
+        	"Harsh4101991",
+        	"Krinkle"
+        ]
     },
-    "boilerplate-desc": "This is an example extension",
-    "boilerplate-i18n-welcome": "Welcome to the localization file of the BoilerPlate extension."
+    "ActivityMonitor-desc": "Monitor recent changes in real time",
+    "ActivityMonitor-i18n-welcome": "Welcome to the localization file of the ActivityMonitor extension.",
+    "ActivityMonitor-specialpage-title": "ActivityMonitor", 
 }

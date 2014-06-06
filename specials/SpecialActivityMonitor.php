@@ -19,9 +19,7 @@ class SpecialActivityMonitor extends SpecialPage {
 	public function execute( $sub ) {
 		$out = $this->getOutput();
 
-		$out->setPageTitle( $this->msg( 'ActivityMonitor-helloworld' ) );
-
-		$out->addWikiMsg( 'ActivityMonitor-helloworld-intro' );
+		$out->setPageTitle( $this->msg( 'ActivityMonitor-specialpage-title' ) );
 
 		$out->addModules( array( 'ext.ActivityMonitor.core' ) );
 		// $out->addModuleScripts( array( 'ext.ActivityMonitor.socketio', 'ext.ActivityMonitor.core' ) );

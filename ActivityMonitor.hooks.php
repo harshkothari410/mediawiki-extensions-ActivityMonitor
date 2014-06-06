@@ -1,11 +1,11 @@
 <?php
 /**
- * Hooks for BoilerPlate extension
+ * Hooks for ActivityMonitor extension
  *
  * @file
  * @ingroup Extensions
  */
 
-class BoilerPlateHooks {
+class ActivityMonitorHooks {
 
 }
