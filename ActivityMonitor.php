@@ -43,7 +43,7 @@ $wgResourceModules['ext.ActivityMonitor.core'] = array(
 		'modules/js/ext.ActivityMonitor.core.js',
 	),
 	'styles' => array(
-		// 'modules/css/ext.ActivityMonitor.foo.css',
+		'modules/css/ext.ActivityMonitor.core.css',
 	),
 	'messages' => array(
 	),
