@@ -5,6 +5,5 @@
 		]
 	},
 	"activitymonitor-desc": "{{desc|name=ActivityMonitor|url=https://www.mediawiki.org/wiki/Extension:ActivityMonitor}}",
-	"activitymonitor-i18n-welcome": "Used to greet the user when reading the .i18n.php file.",
 	"activitymonitor-specialpage-title": "Title for Special Page of ActivityMonitor"
 }

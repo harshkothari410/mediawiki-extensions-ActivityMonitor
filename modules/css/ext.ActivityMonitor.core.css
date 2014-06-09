@@ -13,6 +13,7 @@
 	margin: 0;
 }
 
-#mw-activitymonitor-feed td, th {
+#mw-activitymonitor-feed td, 
+#mw-activitymonitor-feed th {
 	text-align: left;
 }
