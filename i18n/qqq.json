@@ -4,7 +4,7 @@
 			"Harsh4101991"
 		]
 	},
-	"ActivityMonitor-desc": "{{desc|name=ActivityMonitor|url=http://www.mediawiki.org/wiki/Extension:ActivityMonitor}}",
-	"ActivityMonitor-i18n-welcome": "Used to greet the user when reading the .i18n.php file.",
-	"ActivityMonitor-specialpage-title": "Title for Special Page of ActivityMonitor"
+	"activitymonitor-desc": "{{desc|name=ActivityMonitor|url=https://www.mediawiki.org/wiki/Extension:ActivityMonitor}}",
+	"activitymonitor-i18n-welcome": "Used to greet the user when reading the .i18n.php file.",
+	"activitymonitor-specialpage-title": "Title for Special Page of ActivityMonitor"
 }

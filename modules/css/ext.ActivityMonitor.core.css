@@ -1,18 +1,18 @@
-/**
+/*!
  * Stylesheet for ActivityMonitor Core
  */
 
-table {
+#mw-activitymonitor-feed table {
 	margin: 1em;
 	padding: 0;
 	background: #f2f2f2;
 	border: 1px solid #aaa;
 }
 
-table table {
+#mw-activitymonitor-feed table table {
 	margin: 0;
 }
 
-td, th {
+#mw-activitymonitor-feed td, th {
 	text-align: left;
 }

@@ -10,7 +10,7 @@
  * @license The MIT License (MIT)
  */
 
-$wgExtensionCredits['other'][] = array(
+$wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'ActivityMonitor',
 	'author' => array(
@@ -19,7 +19,7 @@ $wgExtensionCredits['other'][] = array(
 	),
 	'version'  => '0.1.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ActivityMonitor',
-	'descriptionmsg' => 'ActivityMonitor-desc',
+	'descriptionmsg' => 'activitymonitor-desc',
 );
 
 /* Setup */
@@ -47,17 +47,15 @@ $wgResourceModules['ext.ActivityMonitor.core'] = array(
 	'dependencies' => array(
 		'ext.ActivityMonitor.socketio',
 	),
-
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'ActivityMonitor',
 );
 
 // Register Socket IO module
 $wgResourceModules['ext.ActivityMonitor.socketio'] = array(
-	'scripts' => array( 
+	'scripts' => array(
 		'lib/socketio.js',
 	),
-
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'ActivityMonitor',
 );
