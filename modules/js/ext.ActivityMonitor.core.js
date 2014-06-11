@@ -3,7 +3,8 @@
  */
 
 ( function ( mw, $ ) {
-	var socket = io.connect('stream.wikimedia.org:80/rc');
+	var socketUrl = mw.config.get( 'wgActivityMonitorRCStreamUrl' );
+	var socket = io.connect( socketUrl );
 	printPlainObj({
 		'event': 'connect',
 		'messsage': 'Connecting to stream.wikimedia.org...'

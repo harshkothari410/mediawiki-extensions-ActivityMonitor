@@ -17,9 +17,12 @@ class SpecialActivityMonitor extends SpecialPage {
 	 *  [[Special:ActivityMonitor/subpage]].
 	 */
 	public function execute( $sub ) {
+		global $wgActivityMonitorRCStreamUrl;
 		$out = $this->getOutput();
 
 		$out->setPageTitle( $this->msg( 'activitymonitor-specialpage-title' ) );
+
+		$out->addJsConfigVars( 'wgActivityMonitorRCStreamUrl', $wgActivityMonitorRCStreamUrl );
 
 		$out->addHtml( '<div id="mw-activitymonitor-feed"></div>' );
 
