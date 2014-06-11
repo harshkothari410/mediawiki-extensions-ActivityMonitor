@@ -1,38 +1,23 @@
-/**
- * Core JS file for Extension:Activitymonitor.
+/*!
+ * Javascript for ActivityMonitor Core
  */
-
 ( function ( mw, $ ) {
-	var socketUrl = mw.config.get( 'wgActivityMonitorRCStreamUrl' );
-	var socket = io.connect( socketUrl );
-	printPlainObj({
-		'event': 'connect',
-		'messsage': 'Connecting to stream.wikimedia.org...'
-	});
+	/*global io */
+	var RC_EDIT = 0;
+	var RC_NEW = 1;
+	var RC_LOG = 3;
 
-	socket.on('connect', function () {
-		printPlainObj({
-			'event': 'connect',
-			'messsage': 'Connection established!'
-		});
+	var socket = io.connect('stream.wikimedia.org:80/rc');
 
-		printPlainObj({
-			'event': 'subscribe',
-			'topic': '*',
-			'messsage': 'Listening to all wikis...'
-		});
+	function printElement(element) {
+		$('#mw-activitymonitor-feed').prepend( element );
+	}
 
-		socket.emit('subscribe', '*');
-	});
+	function printPlainObj(obj) {
+		var element = formatObj(obj);
 
-	socket.on('error', function () {
-		printPlainObj({ 'event': 'error' });
-	});
-
-	socket.on('change', function (rc) {
-		if (rc.bot || rc.minor || rc.namespace !== 0) return;
-		printChangeObj(rc);
-	});
+		printElement(element);
+	}
 
 	function printChangeObj(rc) {
 		var element = formatObj(rc);
@@ -44,16 +29,6 @@
 		element.appendChild(linkRow);
 
 		printElement(element);
-	}
-
-	function printPlainObj(obj) {
-		var element = formatObj(obj);
-
-		printElement(element);
-	}
-
-	function printElement(element) {
-		$('#mw-activitymonitor-feed').append( element );
 		setTimeout(function () {
 			element.parentNode.removeChild(element);
 			element = null;
@@ -92,10 +67,6 @@
 		return td;
 	}
 
-	var RC_EDIT = 0;
-	var RC_NEW = 1;
-	var RC_LOG = 3;
-
 	function getLinks(rc) {
 		var baseurl = rc.server_url + rc.server_script_path + '/index.php';
 		var links = {};
@@ -113,5 +84,34 @@
 
 		return links;
 	}
+
+	printPlainObj({
+		'event': 'connect',
+		'messsage': 'Connecting to stream.wikimedia.org...'
+	});
+
+	socket.on('connect', function () {
+		printPlainObj({
+			'event': 'connect',
+			'messsage': 'Connection established!'
+		});
+
+		printPlainObj({
+			'event': 'subscribe',
+			'topic': '*',
+			'messsage': 'Listening to all wikis...'
+		});
+
+		socket.emit('subscribe', '*');
+	});
+
+	socket.on('error', function () {
+		printPlainObj({ 'event': 'error' });
+	});
+
+	socket.on('change', function (rc) {
+		if (rc.bot) return;
+		printChangeObj(rc);
+	});
 
 }( mediaWiki, jQuery ) );

@@ -1,4 +1,2 @@
-mediawiki-extensions-ActivityMonitor
+ActivityMonitor
 ====================================
-
-This is mediawiki extension - ActivityMonitor
