@@ -2,12 +2,10 @@
 /**
  * ActivityMonitor extension
  *
- * For more info see http://mediawiki.org/wiki/Extension:ActivityMonitor
+ * For more info see https://mediawiki.org/wiki/Extension:ActivityMonitor
  *
  * @file
  * @ingroup Extensions
- * @author Harsh Kothari ( harshkothari410@gmail.com ), Timo Tijhof ( ttijhof@wikimedia.org ) 2014
- * @license The MIT License (MIT)
  */
 
 $wgExtensionCredits['specialpage'][] = array(
@@ -20,6 +18,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'version'  => '0.1.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:ActivityMonitor',
 	'descriptionmsg' => 'activitymonitor-desc',
+	'license-name' => 'MIT',
 );
 
 /* Setup */
@@ -35,17 +34,15 @@ $wgSpecialPages['ActivityMonitor'] = 'SpecialActivityMonitor';
 $wgSpecialPageGroups['ActivityMonitor'] = 'other';
 
 // Options : RCStream URL
-$wgActivityMonitorRCStreamUrl = NULL;
+$wgActivityMonitorRCStreamUrl = null;
 
 // Register modules
 $wgResourceModules['ext.ActivityMonitor.core'] = array(
 	'scripts' => array(
-		'modules/js/ext.ActivityMonitor.core.js',
+		'modules/ext.ActivityMonitor.core.js',
 	),
 	'styles' => array(
-		'modules/css/ext.ActivityMonitor.core.css',
-	),
-	'messages' => array(
+		'modules/ext.ActivityMonitor.core.css',
 	),
 	'dependencies' => array(
 		'ext.ActivityMonitor.socketio',
